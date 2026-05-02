@@ -100,7 +100,7 @@ def euclidean_cdist_topk(tensor, codebook, compute_chunk_size=1024, topk=1,
 	for i, tc in enumerate(tensor):
 		cb = codebook
 
-		if half_precision:
+		if half_precision and len(tc)>26:
 			tc = tc.half()
 			cb = cb.half()
 
